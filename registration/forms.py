@@ -15,6 +15,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.forms import UserCreationForm
 
 from .users import UserModel, UsernameField
+from .profile import Profile
 
 User = UserModel()
 

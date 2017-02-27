@@ -7,5 +7,5 @@ def home(request):
 
 
 def profile(request):
-    output = 'Hello World! Configured for usernames using request context processing. My username is: ' + request.user.username 
+    output = 'Hello World! Configured for usernames using request context processing. My username is: ' + request.user.username
     return HttpResponse(output)
