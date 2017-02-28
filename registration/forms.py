@@ -19,7 +19,13 @@ from .profile import Profile
 
 User = UserModel()
 
-#UserCreationForm
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('secret', 'picturePassword')
+
+
 class RegistrationForm(UserCreationForm):
     """
     Form for registering a new user account.
@@ -35,12 +41,10 @@ class RegistrationForm(UserCreationForm):
     """
     required_css_class = 'required'
     email = forms.EmailField(label=_("E-mail"))
-    image = forms.FileField(label=("Picture-Password"), required=False)
-    secret = forms.CharField(label=("Super-Duper Secret"))
 
     class Meta:
         model = User
-        fields = (UsernameField(), "email", "secret", "image")
+        fields = (UsernameField(), "email")
 
 
 class RegistrationFormTermsOfService(RegistrationForm):

@@ -43,3 +43,8 @@ class RegistrationView(BaseRegistrationView):
 
         """
         return getattr(settings, 'REGISTRATION_OPEN', True)
+
+class customRegistrationView(RegistrationView):
+    success_url = 'registration_complete'
+    def register(self, form, profileForm):
+        return
